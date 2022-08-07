@@ -31,6 +31,7 @@ export class AuthenticationService {
 
   public logout() {
     localStorage.removeItem(this.tokenKey);
+    this.router.navigate(['/login']);
   }
 
   public isLoggedIn(): boolean {
