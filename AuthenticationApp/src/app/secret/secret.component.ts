@@ -1,5 +1,7 @@
+import { WeatherClient } from './../clients/weather.client';
 import { AuthenticationService } from './../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-secret',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secret.component.css'],
 })
 export class SecretComponent implements OnInit {
-  constructor(private authenticationService: AuthenticationService) {}
+  public weather: Observable<any> = this.weatherClient.getWeatherData();
+  constructor(
+    private authenticationService: AuthenticationService,
+    private weatherClient: WeatherClient
+  ) {}
 
   ngOnInit(): void {}
 

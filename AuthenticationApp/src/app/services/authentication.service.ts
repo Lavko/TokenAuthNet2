@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationClient } from '../clients/authentication-client.service';
+import { AuthenticationClient } from '../clients/authentication.client';
 
 @Injectable({
   providedIn: 'root',
